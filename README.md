@@ -4,6 +4,7 @@ In this repo you can find the coding/programming assignment for CIS 524.
 
 Authors:
 Carlos Herrera
+
 Hannah Simon
 
 ## About the repo
@@ -28,14 +29,16 @@ if <cond> then <expr> else <expr>
 <oprnd> ::= id | intnum
 ```
 
-We implemented the following:
-- Top Down Parser with Lexical analyzer from class in C
-- Top Down Parser with Lexical analyzer from class in C with input from user (translation)
-- Top Down Parser with Lexical analyzer from class in python with input from user (translation)
+We implemented the following before moving to the :
+- Top Down Parser with Lexical analyzer from class, in C
+- Top Down Parser with Lexical analyzer from class, in C with input from user (translation)
+- Top Down Parser with Lexical analyzer from class, in python with input from user (translation)
+- Top Down parser with Lexical analyzer from the book, in python, using REGEX
+- Top Down parser with Lexical analyzer from class, in python, using REGEX like the one from the book.
 
 The top down parser seen in class follows the CFG:
 
-```batch
+```bash
 <expr>   ::= <term> { ("+" | "-") <term> }
 <term>   ::= <factor> { ("*" | "/") <factor> }
 <factor> ::= <IDENT> | <INT_LIT> | "(" <expr> ")"
@@ -47,6 +50,4 @@ The top down parser seen in class follows the CFG:
 ```
 
 ## Any questions?
-
-## License
-[Apache-2.0]http://www.apache.org/licenses/
+You can reach out via email in profiles!

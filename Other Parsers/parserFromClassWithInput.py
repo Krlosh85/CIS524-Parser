@@ -91,7 +91,7 @@ def lex():
     get_non_blank()
 
     if char_class == LETTER:
-        # Handle Identifiers (Variable Names)
+        #  IDs/Variable Names
         add_char()
         get_char()
         while char_class in (LETTER, DIGIT):
@@ -100,7 +100,7 @@ def lex():
         next_token = IDENT
 
     elif char_class == DIGIT:
-        # Handle Integer Literals
+        # Integer
         add_char()
         get_char()
         while char_class == DIGIT:
@@ -109,7 +109,7 @@ def lex():
         next_token = INT_LIT
 
     elif char_class == UNKNOWN:
-        # Handle Operators and Parentheses
+        # Parentheses/Operators
         lookup(next_char)
         add_char()
         get_char()
@@ -184,7 +184,7 @@ def main():
     global input_string, current_index
 
     # Get user input
-    input_string = input("Enter your arithmetic expression: ") + " "  # Add space to handle EOF detection
+    input_string = input("Enter the arithmetic expression: ") + " "  # Add space to handle EOF detection
     current_index = 0
 
     # Lexical analysis
