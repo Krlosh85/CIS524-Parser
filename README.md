@@ -3,6 +3,7 @@
 In this repo you can find the coding/programming assignment for CIS 524.
 
 Authors:
+
 Carlos Herrera
 
 Hannah Simon
