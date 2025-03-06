@@ -1,15 +1,14 @@
 '''
-Authors: Carlos Herrera & Hannah Simmons
+Authors: Carlos Herrera & Hannah Simon
 CIS 524 - Comparative Programming Languages
 Instructor: Aditi Singh, PhD
 
-Coding assignment - Top Down Recursive-descent parser using python
+Coding assignment - Top-down Recursive-descent Parser using Python
 
 Any questions? Need explanation in the code?
 Contact us:
-
 Carlos - c.herreramartinez@vikes.csuohio.edu
-Hannah - h.g.simon@vikes.csuohio.edu
+Hannah - hgsimon2@gmail.com
 '''
 
 ''' CFG
