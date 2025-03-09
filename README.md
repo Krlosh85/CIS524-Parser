@@ -1,14 +1,41 @@
-![](https://www.csuohio.edu/sites/default/files/Full%20Vertical_CSU%20Green_Fresh%20Green_CMYK_Update.jpg)
-# CIS524-Parser
-In this repo you can find the coding/programming assignment for CIS 524.
+# Programming Language Parser
 
-Authors:
+## Overview
+This repository contains a top-down recursive parser and lexical analyzer designed to process a defined context-free grammar (CFG). The project explores various implementations in both C and Python, including versions utilizing regular expressions for lexical analysis.
 
-Carlos Herrera
+## Setup & Usage
+1. Ensure the following prerequisites are installed:
+    - For the C implementation: GCC or any compatible C compiler.
+    - For the Python implementation: Python 3.x.
+2. Clone the repository:
+    ```bash
+    git clone https://github.com/Krlosh85/CIS524-Parser
+    cd CIS524-Parser
+    ```
+3. Compile and run the C version:
+    ```bash
+    gcc parser.c -o parser
+    ./parser sample1.tiny
+    ```
+4. Run the Python version:
+    ```bash
+    python3 parser.py sample1.tiny
+    ```
+    
+## Reference CFG
+The initial implementation uses a simpler context-free grammar (CFG) as a foundational starting point. This CFG served as the basis for the parser's development before evolving to support more complex constructs like ```let-in-end``` declarations, type annotations, and conditional expressions in the main grammar. The following is the simpler CFG initially employed:
 
-Hannah Simon
+```bash
+<expr>   ::= <term> { ("+" | "-") <term> }
+<term>   ::= <factor> { ("*" | "/") <factor> }
+<factor> ::= <IDENT> | <INT_LIT> | "(" <expr> ")"
+<IDENT>  ::= <LETTER> { <LETTER> | <DIGIT> }
+<INT_LIT> ::= <DIGIT> { <DIGIT> }
+<LETTER> ::= "a" - "Z"
+<DIGIT>  ::= "0" - "9"
+```
 
-## About the repo
+## Defined CPG for Parsing
 We developed a top down recursive parser and lexical analyzer for the following CFG:
 
 ```bash
@@ -30,25 +57,19 @@ if <cond> then <expr> else <expr>
 <oprnd> ::= id | intnum
 ```
 
-We implemented the following before moving to the :
-- Top Down Parser with Lexical analyzer from class, in C
-- Top Down Parser with Lexical analyzer from class, in C with input from user (translation)
-- Top Down Parser with Lexical analyzer from class, in python with input from user (translation)
-- Top Down parser with Lexical analyzer from the book, in python, using REGEX
-- Top Down parser with Lexical analyzer from class, in python, using REGEX like the one from the book.
+## Implementations
+We developed multiple versions of the parser and lexical analyzer:
+1. Top-Down Parser with Lexical Analyzer in C
+2. Top-Down Parser with Lexical Analyzer in C with user input (translated version)
+3. Top-Down Parser with Lexical Analyzer in Python with user input (translated version)
+4. Top-Down Parser with Lexical Analyzer using REGEX (based on textbook example) in Python
+5. Top-Down Parser with Lexical Analyzer using REGEX (class version) in Python
 
-The top down parser seen in class follows the CFG:
+## References
+[1] Python Regex: https://docs.python.org/3/library/re.html  
+[2] Simple Recursive Descent Parser from book: https://learning.oreilly.com/library/view/writing-a-simple/9781098171506/ch01.html#id1  
+[3] Recursive Descent Parser example 1: https://cratecode.com/info/python-recursive-descent-parser  
+[4] GFG Recursive Descent Parser example 2: https://www.geeksforgeeks.org/recursive-descent-parser/
 
-```bash
-<expr>   ::= <term> { ("+" | "-") <term> }
-<term>   ::= <factor> { ("*" | "/") <factor> }
-<factor> ::= <IDENT> | <INT_LIT> | "(" <expr> ")"
-<IDENT>  ::= <LETTER> { <LETTER> | <DIGIT> }
-<INT_LIT> ::= <DIGIT> { <DIGIT> }
-<LETTER> ::= "a" - "Z"
-<DIGIT>  ::= "0" - "9"
-
-```
-
-## Any questions?
-You can reach out via email in profiles!
+## Authors
+This project was collaboratively developed by Carlos Herrera and Hannah G. Simon.
